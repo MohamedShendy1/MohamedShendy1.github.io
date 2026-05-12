@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Shendy | iOS Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Library for Scroll Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="dark-mode">
+    <div class="background-glow"></div>
+
+    <!-- Floating Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">MS</a>
+            <ul class="nav-links">
+                <li><a href="#hero" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="theme-toggle" id="theme-btn">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content" data-aos="fade-up">
+            <h1 class="glitch">Mohamed Shendy</h1>
+            <h2 class="typewriter-text"><span id="typewriter"></span></h2>
+            <p class="subtitle">Building high-performance, scalable iOS applications with elegant code.</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn btn-primary">Contact Me</a>
+                <a href="#projects" class="btn btn-secondary">View Projects</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-right">About Me</h2>
+            <div class="glass-card about-card" data-aos="zoom-in">
+                <p>I am a Senior iOS Developer dedicated to creating seamless user experiences. With a deep passion for <strong>Swift</strong> and <strong>SwiftUI</strong>, I specialize in crafting mobile applications that are not only beautiful but also built on <strong>scalable mobile architecture</strong>.</p>
+                <p>My approach combines clean code principles with modern design trends to solve complex engineering challenges.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-right">Technical Arsenal</h2>
+            <div class="skills-grid">
+                <div class="skill-pill" data-aos="fade-up" data-aos-delay="100">Swift</div>
+                <div class="skill-pill" data-aos="fade-up" data-aos-delay="200">SwiftUI</div>
+                <div class="skill-pill" data-aos="fade-up" data-aos-delay="300">UIKit</div>
+                <div class="skill-pill" data-aos="fade-up" data-aos-delay="400">REST APIs</div>
+                <div class="skill-pill" data-aos="fade-up" data-aos-delay="500">Git</div>
+                <div class="skill-pill" data-aos="fade-up" data-aos-delay="600">Clean Architecture</div>
+                <div class="skill-pill" data-aos="fade-up" data-aos-delay="700">MVVM / VIPER</div>
+                <div class="skill-pill" data-aos="fade-up" data-aos-delay="800">Firebase</div>
+                <div class="skill-pill" data-aos="fade-up" data-aos-delay="900">Concurrency</div>
+                <div class="skill-pill" data-aos="fade-up" data-aos-delay="1000">Networking</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Education Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-right">Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="glass-card">
+                        <h3>Senior iOS Engineer</h3>
+                        <span class="date">Present</span>
+                        <p>Leading mobile development initiatives and optimizing app performance using modern Swift patterns.</p>
+                    </div>
+                </div>
+                <!-- Add more items here -->
+            </div>
+            
+            <h2 class="section-title mt-5" data-aos="fade-right">Education</h2>
+            <div class="glass-card education-card" data-aos="fade-up">
+                <h3>B.S. in Commerce</h3>
+                <p>Menoufia University | Class of 2010</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-right">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="glass-card project-card" data-aos="fade-up">
+                    <div class="project-img"></div>
+                    <div class="project-info">
+                        <h3>Networking Layer Package</h3>
+                        <p>A modular, protocol-oriented networking layer built with Async/Await.</p>
+                        <div class="tags">
+                            <span>Swift</span>
+                            <span>SPM</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#"><i class="fab fa-github"></i> Code</a>
+                            <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="glass-card project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-img"></div>
+                    <div class="project-info">
+                        <h3>Binbon App</h3>
+                        <p>Social media platform featuring video streaming and live chat components.</p>
+                        <div class="tags">
+                            <span>SwiftUI</span>
+                            <span>WebSockets</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#"><i class="fab fa-github"></i> Code</a>
+                            <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-right">Get In Touch</h2>
+            <div class="glass-card contact-container" data-aos="zoom-in">
+                <p>Let's discuss your next project or just say hi!</p>
+                <div class="contact-links">
+                    <a href="mailto:your-email@example.com" class="contact-btn"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/yourusername" class="contact-btn"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/yourusername" class="contact-btn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Mohamed Shendy. Built with Swift-precision.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
