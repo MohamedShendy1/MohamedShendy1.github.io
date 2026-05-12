@@ -1,90 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamed Shendy | Senior iOS Developer</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mohamed Shendy | Senior iOS Developer</title>
+
+  <link rel="stylesheet" href="styles.css"/>
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
 </head>
-<body class="dark-mode">
-    <div class="background-glow"></div>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">MS</a>
-            <ul class="nav-links">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-            </ul>
-            <div class="theme-toggle" id="theme-btn"><i class="fas fa-moon"></i></div>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+
+      <a href="#" class="logo">MS</a>
+
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero" class="hero-section">
+
+    <div class="hero-container">
+
+      <!-- LEFT CONTENT -->
+      <div class="hero-text">
+
+        <p class="hero-small">
+          Senior iOS Developer
+        </p>
+
+        <h1 class="hero-title">
+          Mohamed <span>Shendy</span>
+        </h1>
+
+        <p class="hero-description">
+          Senior iOS Developer with 5+ years of experience specializing
+          in Swift, SwiftUI, Clean Architecture, and scalable mobile ecosystems.
+        </p>
+
+        <div class="contact-info">
+
+          <div class="contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+20 120 239 6718</span>
+          </div>
+
+          <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>dev.mohamed.shendy@gmail.com</span>
+          </div>
+
+          <div class="contact-item">
+            <i class="fa-brands fa-github"></i>
+            <a href="https://github.com/mohamedshendy" target="_blank">
+              github.com/mohamedshendy
+            </a>
+          </div>
+
+          <div class="contact-item">
+            <i class="fa-brands fa-linkedin"></i>
+            <a href="https://linkedin.com/in/mohamedshendy" target="_blank">
+              linkedin.com/in/mohamedshendy
+            </a>
+          </div>
+
         </div>
-    </nav>
 
-    <section id="hero" class="hero-section">
-        <div class="hero-content" data-aos="fade-up">
-            <div class="profile-container">
-                <img src="profile.jpg" alt="Mohamed Shendy" class="profile-img">
-            </div>
-            <h1 class="hero-name">Mohamed Shendy</h1>
-            <div class="typewriter-container">
-                <h2 class="typewriter-text"><span id="typewriter"></span></h2>
-            </div>
-            <div class="hero-btns">
-                <a href="#projects" class="btn primary">View Projects</a>
-                <a href="mailto:dev.mohamed.shendy@gmail.com" class="btn secondary">Contact Me</a>
-            </div>
+        <div class="hero-buttons">
+
+          <a href="#projects" class="btn primary-btn">
+            View Projects
+          </a>
+
+          <a href="mailto:dev.mohamed.shendy@gmail.com" class="btn secondary-btn">
+            Contact Me
+          </a>
+
         </div>
-    </section>
 
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="glass-card" data-aos="fade-up">
-                <p>Senior iOS Developer with 5+ years of experience specializing in Swift, SwiftUI, and Modular Architecture. Expert in building scalable ecosystems for FinTech, Logistics, and E-commerce.</p>
-                <p style="margin-top: 15px;">I focus on modernizing legacy codebases into optimized MVVM-C and VIPER patterns to ensure high performance and maintainability.</p>
-            </div>
+      </div>
+
+      <!-- RIGHT IMAGE -->
+      <div class="hero-image">
+
+        <div class="image-wrapper">
+          <img src="profile.jpg" alt="Mohamed Shendy">
         </div>
-    </section>
 
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="glass-card project-card" onclick="openProject('ezeats')" data-aos="fade-up">
-                    <div class="project-preview-scroll">
-                        <img src="ezeats1.jpg" alt="EZeats Preview">
-                        <img src="ezeats2.jpg" alt="EZeats Details">
-                    </div>
-                    <h3>EZeats</h3>
-                    <p>Multi-vendor food-tech ecosystem serving 45,000+ users.</p>
-                    <div class="tags"><span>SwiftUI</span><span>SwiftData</span></div>
-                </div>
+      </div>
 
-                <div class="glass-card project-card" onclick="openProject('drovox')" data-aos="fade-up">
-                    <div class="project-preview-scroll">
-                        <img src="drovox1.jpg" alt="Drovox Preview">
-                        <img src="drovox2.jpg" alt="Drovox Hero">
-                    </div>
-                    <h3>Drovox & Drovox Hero</h3>
-                    <p>Premium ride-hailing ecosystem with real-time GPS tracking.</p>
-                    <div class="tags"><span>UIKit</span><span>CoreLocation</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div id="project-modal" class="modal">
-        <div class="modal-content glass-card">
-            <span class="close-btn" onclick="closeProject()">&times;</span>
-            <div id="modal-body"></div>
-        </div>
     </div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+
+    <div class="section-container">
+
+      <div class="about-left">
+
+        <img src="profile.jpg" alt="Mohamed">
+
+        <h3>Mohamed Shendy</h3>
+
+        <a href="https://linkedin.com/in/mohamedshendy" target="_blank" class="about-btn">
+          LinkedIn
+        </a>
+
+        <a href="https://github.com/mohamedshendy" target="_blank" class="about-btn">
+          GitHub
+        </a>
+
+        <a href="Mohamed_Shendy_Senior_iOS_Developer_All Proj.pdf" class="about-btn">
+          Download CV
+        </a>
+
+      </div>
+
+      <div class="about-right">
+
+        <h2>About Me</h2>
+
+        <p>
+          Senior iOS Developer with 5+ years of experience specializing in Swift,
+          SwiftUI, and Modular Architecture.
+        </p>
+
+        <p>
+          Expert in building scalable ecosystems for FinTech, Logistics,
+          and E-commerce using Clean Architecture and SOLID principles.
+        </p>
+
+        <p>
+          Proven track record in modernizing legacy codebases into optimized
+          MVVM-C and VIPER patterns.
+        </p>
+
+        <p>
+          Passionate about scalable mobile systems, performance optimization,
+          modular architecture, and polished Apple-like user experiences.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+
+    <div class="projects-container">
+
+      <h2 class="section-title">
+        Featured Projects
+      </h2>
+
+      <!-- PROJECT -->
+      <div class="project-card">
+
+        <div class="project-image">
+          <img src="ezeats1.jpg" alt="">
+        </div>
+
+        <div class="project-info">
+
+          <h3>EZeats</h3>
+
+          <p>
+            Multi-vendor food-tech ecosystem serving 45,000+ users
+            with QR ordering, payment integrations, and real-time delivery tracking.
+          </p>
+
+          <div class="project-tags">
+            <span>SwiftUI</span>
+            <span>MVVM-C</span>
+            <span>SwiftData</span>
+          </div>
+
+          <div class="project-buttons">
+
+            <a href="#" class="btn primary-btn">
+              View App Store
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- PROJECT -->
+      <div class="project-card reverse">
+
+        <div class="project-image">
+          <img src="drovox1.jpg" alt="">
+        </div>
+
+        <div class="project-info">
+
+          <h3>Drovox Hero</h3>
+
+          <p>
+            Premium ride-hailing ecosystem with real-time GPS tracking,
+            fuel credit systems, and multi-vehicle management.
+          </p>
+
+          <div class="project-tags">
+            <span>UIKit</span>
+            <span>Google Maps</span>
+            <span>CoreLocation</span>
+          </div>
+
+          <div class="project-buttons">
+
+            <a href="#" class="btn primary-btn">
+              View App Store
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <script src="script.js"></script>
+
 </body>
 </html>
