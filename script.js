@@ -1,83 +1,74 @@
-// Initialize AOS Animations
-AOS.init({ duration: 1000, once: true });
-
-// Project Database from CV
-const projectData = {
-    ezeats: {
-        title: "EZeats",
-        description: "Multi-vendor food-tech ecosystem serving 45,000+ users. Features QR-code ordering, dual payment gateway integration (Paymob, Kashier), and real-time delivery tracking via RoBoost API.",
-        images: ["ezeats1.jpg", "ezeats2.jpg", "ezeats3.jpg"],
-        skills: ["SwiftUI", "SwiftData", "MVVM-C", "FinTech"]
-    },
-    drovox: {
-        title: "Drovox & Drovox Hero",
-        description: "Premium ride-hailing ecosystem with rider and driver apps. Includes real-time GPS tracking, multi-vehicle management, and fuel credit systems.",
-        images: ["drovox1.jpg", "drovox2.jpg", "drovox3.jpg"],
-        skills: ["UIKit", "CoreLocation", "Google Maps SDK", "Real-Time Tracking"]
-    },
-    mat7anty: {
-        title: "Mat7anty",
-        description: "Fast-commerce delivery platform for Kuwaiti mills with KNET payment integration and sub-40-minute delivery optimization.",
-        images: ["mat7anty1.jpg", "mat7anty2.jpg"],
-        skills: ["UIKit", "MVP", "KNET Integration", "Geolocation"]
-    }
-};
-
-// Open Project Detail Modal
-function openProject(id) {
-    const project = projectData[id];
-    const modal = document.getElementById('project-modal');
-    const body = document.getElementById('modal-body');
-    
-    body.innerHTML = `
-        <h2 style="margin-bottom: 20px;">${project.title}</h2>
-        <div class="project-preview-scroll" style="height: 400px; margin-bottom: 30px;">
-            ${project.images.map(img => `<img src="${img}" style="height: 100%; width: auto; min-width: 100%;">`).join('')}
-        </div>
-        <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text-main);">${project.description}</p>
-        <div class="skills-grid" style="margin-top: 30px;">
-            ${project.skills.map(s => `<span class="skill-pill">${s}</span>`).join('')}
-        </div>
-    `;
-    
-    modal.style.display = "block";
-    document.body.style.overflow = "hidden"; // Prevent background scroll
-}
-
-// Close Modal
-function closeProject() {
-    document.getElementById('project-modal').style.display = "none";
-    document.body.style.overflow = "auto";
-}
-
-// Close on background click
-window.onclick = function(event) {
-    const modal = document.getElementById('project-modal');
-    if (event.target == modal) closeProject();
-}
+// Initialize AOS
+AOS.init({
+    duration: 1000,
+    once: true
+});
 
 // Typewriter Effect
 const textElement = document.getElementById('typewriter');
-const phrases = ['Senior iOS Engineer', 'SwiftUI Specialist', 'Modular Architecture Expert'];
-let pIndex = 0, cIndex = 0, isDeleting = false;
+const phrases = ['Senior iOS Engineer', 'SwiftUI Enthusiast', 'Clean Architecture Advocate'];
+let phraseIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
 
-function typeEffect() {
-    const current = phrases[pIndex];
-    textElement.textContent = isDeleting ? current.substring(0, cIndex--) : current.substring(0, cIndex++);
+function type() {
+    const currentPhrase = phrases[phraseIndex];
     
-    let speed = isDeleting ? 50 : 100;
-    if (!isDeleting && cIndex === current.length) { speed = 2000; isDeleting = true; }
-    else if (isDeleting && cIndex === 0) { isDeleting = false; pIndex = (pIndex + 1) % phrases.length; speed = 500; }
-    setTimeout(typeEffect, speed);
+    if (isDeleting) {
+        textElement.textContent = currentPhrase.substring(0, charIndex - 1);
+        charIndex--;
+    } else {
+        textElement.textContent = currentPhrase.substring(0, charIndex + 1);
+        charIndex++;
+    }
+
+    let typeSpeed = isDeleting ? 40 : 80;
+
+    if (!isDeleting && charIndex === currentPhrase.length) {
+        typeSpeed = 2000;
+        isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        typeSpeed = 500;
+    }
+
+    setTimeout(type, typeSpeed);
 }
 
-// Theme Toggle
+// Theme Toggle Logic
 const themeBtn = document.getElementById('theme-btn');
+const body = document.body;
+
 themeBtn.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
+    body.classList.toggle('light-mode');
     const icon = themeBtn.querySelector('i');
-    icon.classList.toggle('fa-moon');
-    icon.classList.toggle('fa-sun');
+    if (body.classList.contains('light-mode')) {
+        icon.classList.replace('fa-moon', 'fa-sun');
+    } else {
+        icon.classList.replace('fa-sun', 'fa-moon');
+    }
 });
 
-document.addEventListener('DOMContentLoaded', typeEffect);
+// Active Link Highlighting
+window.addEventListener('scroll', () => {
+    let current = "";
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 100) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href").includes(current)) {
+            link.classList.add("active");
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', type);
