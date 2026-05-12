@@ -1,12 +1,13 @@
 // Initialize AOS
 AOS.init({
     duration: 1000,
-    once: true
+    once: true,
+    offset: 100
 });
 
 // Typewriter Effect
 const textElement = document.getElementById('typewriter');
-const phrases = ['Senior iOS Engineer', 'SwiftUI Enthusiast', 'Clean Architecture Advocate'];
+const phrases = ['iOS Developer', 'Swift Specialist', 'Architecture Enthusiast'];
 let phraseIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -22,7 +23,7 @@ function type() {
         charIndex++;
     }
 
-    let typeSpeed = isDeleting ? 40 : 80;
+    let typeSpeed = isDeleting ? 50 : 100;
 
     if (!isDeleting && charIndex === currentPhrase.length) {
         typeSpeed = 2000;
@@ -36,39 +37,38 @@ function type() {
     setTimeout(type, typeSpeed);
 }
 
-// Theme Toggle Logic
+// Theme Toggle
 const themeBtn = document.getElementById('theme-btn');
 const body = document.body;
 
 themeBtn.addEventListener('click', () => {
     body.classList.toggle('light-mode');
     const icon = themeBtn.querySelector('i');
-    if (body.classList.contains('light-mode')) {
-        icon.classList.replace('fa-moon', 'fa-sun');
-    } else {
-        icon.classList.replace('fa-sun', 'fa-moon');
-    }
+    icon.classList.toggle('fa-moon');
+    icon.classList.toggle('fa-sun');
 });
 
-// Active Link Highlighting
+// Scroll Highlighting
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-links a');
+
 window.addEventListener('scroll', () => {
-    let current = "";
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".nav-links a");
-
-    sections.forEach((section) => {
+    let current = '';
+    sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 100) {
-            current = section.getAttribute("id");
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop - 150) {
+            current = section.getAttribute('id');
         }
     });
 
-    navLinks.forEach((link) => {
-        link.classList.remove("active");
-        if (link.getAttribute("href").includes(current)) {
-            link.classList.add("active");
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current)) {
+            link.classList.add('active');
         }
     });
 });
 
+// Start Animation
 document.addEventListener('DOMContentLoaded', type);
