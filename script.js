@@ -1,109 +1,32 @@
-// // ==========================================
-// // Portfolio Loaded
-// // ==========================================
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   console.log("Mohamed Shendy Portfolio Loaded");
-// });
-
-// // ==========================================
-// // Smooth Scroll Active Links
-// // ==========================================
-
-// const navLinks = document.querySelectorAll('.nav-links a');
-
-// navLinks.forEach(link => {
-
-//   link.addEventListener('click', function(e) {
-
-//     e.preventDefault();
-
-//     const targetId = this.getAttribute('href');
-//     const targetSection = document.querySelector(targetId);
-
-//     if(targetSection) {
-
-//       window.scrollTo({
-//         top: targetSection.offsetTop - 70,
-//         behavior: 'smooth'
-//       });
-
-//     }
-
-//   });
-
-// });
-
-// // ==========================================
-// // Navbar Background On Scroll
-// // ==========================================
-
-// const navbar = document.querySelector('.navbar');
-
-// window.addEventListener('scroll', () => {
-
-//   if(window.scrollY > 50) {
-
-//     navbar.style.background = "rgba(0,0,0,0.85)";
-//     navbar.style.backdropFilter = "blur(20px)";
-//     navbar.style.borderBottom = "1px solid rgba(255,255,255,0.08)";
-
-//   } else {
-
-//     navbar.style.background = "rgba(0,0,0,0.6)";
-//     navbar.style.borderBottom = "1px solid rgba(255,255,255,0.06)";
-//   }
-
-// });
-
-// // ==========================================
-// // Fade In Animation On Scroll
-// // ==========================================
-
-// const observer = new IntersectionObserver((entries) => {
-
-//   entries.forEach(entry => {
-
-//     if(entry.isIntersecting) {
-
-//       entry.target.classList.add('show');
-
-//     }
-
-//   });
-
-// }, {
-//   threshold: 0.2
-// });
-
-// const hiddenElements = document.querySelectorAll('.project-card, .about-right, .about-left');
-
-// hiddenElements.forEach(el => {
-//   el.classList.add('hidden');
-//   observer.observe(el);
-// });
-
-
 document.addEventListener("DOMContentLoaded", () => {
+    const revealElements = document.querySelectorAll('.reveal');
 
-    console.log("Mohamed Shendy Portfolio Loaded");
+    const revealOnScroll = () => {
+        for (let i = 0; i < revealElements.length; i++) {
+            const windowHeight = window.innerHeight;
+            const elementTop = revealElements[i].getBoundingClientRect().top;
+            const elementVisible = 100;
 
-});
+            if (elementTop < windowHeight - elementVisible) {
+                revealElements[i].classList.add("active");
+            }
+        }
+    };
 
-/* NAVBAR SCROLL EFFECT */
+    window.addEventListener("scroll", revealOnScroll);
+    
+    // Check once on load
+    revealOnScroll();
 
-const navbar = document.querySelector('.navbar');
-
-window.addEventListener('scroll', () => {
-
-    if(window.scrollY > 50){
-
-        navbar.style.background = "rgba(0,0,0,0.9)";
-        navbar.style.backdropFilter = "blur(20px)";
-
-    } else {
-
-        navbar.style.background = "rgba(0,0,0,0.7)";
-    }
-
+    // Small Navbar Scroll Effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            navbar.style.background = "rgba(255,255,255,0.9)";
+            navbar.style.backdropFilter = "blur(10px)";
+        } else {
+            navbar.style.background = "transparent";
+            navbar.style.backdropFilter = "none";
+        }
+    });
 });
