@@ -14,6 +14,9 @@ body {
   color: #fff;
   overflow-x: hidden;
 }
+body{
+    background:red !important;
+}
 
 /* NAVBAR */
 
