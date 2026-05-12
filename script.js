@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // ---------- REVEAL ON SCROLL ----------
+    // ---------- SCROLL REVEAL ----------
     const revealElements = document.querySelectorAll('.reveal');
-    const bioSection = document.querySelector('#about');
 
     const revealOnScroll = () => {
         for (let el of revealElements) {
@@ -11,10 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
             if (elementTop < windowHeight - elementVisible) {
                 el.classList.add('active');
             }
-        }
-        // Special for about section if needed
-        if (bioSection && bioSection.getBoundingClientRect().top < window.innerHeight - 100) {
-            bioSection.classList.add('active');
         }
     };
 
@@ -37,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // ---------- DARK / LIGHT MODE TOGGLE ----------
+    // ---------- DARK / LIGHT MODE ----------
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
     themeToggle.addEventListener('click', () => {
@@ -50,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
             body.classList.add('dark-mode');
             themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
         }
-        // update navbar background after toggle while scrolled
+        // update navbar background
         const scrollY = window.scrollY;
         if (scrollY > 50) {
             if (body.classList.contains('light-mode')) {
@@ -67,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // ---------- SHOW MORE PROJECTS BUTTON ----------
+    // ---------- SHOW MORE PROJECTS ----------
     const showMoreBtn = document.getElementById('showMoreProjectsBtn');
     const moreProjectsDiv = document.getElementById('more-projects');
     if (showMoreBtn && moreProjectsDiv) {
@@ -75,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (moreProjectsDiv.style.display === 'none' || moreProjectsDiv.style.display === '') {
                 moreProjectsDiv.style.display = 'block';
                 showMoreBtn.innerHTML = 'Show Less Projects <i class="fa-solid fa-arrow-up"></i>';
-                // trigger reveal for new projects
+                // trigger reveal for newly added projects
                 const newProjects = moreProjectsDiv.querySelectorAll('.reveal');
                 newProjects.forEach(proj => setTimeout(() => proj.classList.add('active'), 100));
             } else {
@@ -91,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const prevBtn = document.getElementById('ezeatsPrev');
     const nextBtn = document.getElementById('ezeatsNext');
     const totalImages = 3;
-    const imageBase = 'https://placehold.co/280x560/';
     const imageColors = ['1a1c2c', '2a2e3f', '3a3e5f'];
     const imageTexts = ['EZeats+Order', 'EZeats+Tracking', 'EZeats+Profile'];
 
@@ -131,12 +125,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Smooth scrolling for anchor links
+    // Smooth scrolling for internal anchor links
     document.querySelectorAll('.nav-links a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
-            if (targetId === '#contactBtn') return; // already handled modal
+            if (targetId === '#contactBtn') return; // handled by modal
             const targetElem = document.querySelector(targetId);
             if (targetElem) {
                 e.preventDefault();
