@@ -16,15 +16,12 @@
         <div class="nav-container">
             <a href="#" class="logo">MS</a>
             <ul class="nav-links">
-                <li><a href="#hero" class="active">Home</a></li>
+                <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="theme-toggle" id="theme-btn">
-                <i class="fas fa-moon"></i>
-            </div>
+            <div class="theme-toggle" id="theme-btn"><i class="fas fa-moon"></i></div>
         </div>
     </nav>
 
@@ -34,85 +31,62 @@
                 <img src="profile.jpg" alt="Mohamed Shendy" class="profile-img">
                 <div class="hero-contact-mini">
                     <a href="mailto:dev.mohamed.shendy@gmail.com"><i class="fas fa-envelope"></i></a>
-                    <a href="http://linkedin.com/in/mohamed-shendy-30563a173" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/MohamedShendy1" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="http://linkedin.com/in/mohamedshendy" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/mohamedshendy" target="_blank"><i class="fab fa-github"></i></a>
                 </div>
             </div>
             <h1 class="hero-name">Mohamed Shendy</h1>
             <h2 class="typewriter-text"><span id="typewriter"></span></h2>
-            <p class="subtitle">Senior iOS Engineer specialized in scalable mobile architecture.</p>
-            <div class="hero-btns">
-                <a href="#contact" class="btn btn-primary">Contact Me</a>
-                <a href="#projects" class="btn btn-secondary">View Projects</a>
-            </div>
+            <p class="subtitle">Senior iOS Developer with 5+ years of experience[cite: 5].</p>
         </div>
     </section>
 
     <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-right">About Me</h2>
-            <div class="glass-card about-card" data-aos="zoom-in">
-                <p>I am a <strong>Senior iOS Engineer</strong> at Paymob with a professional background that transitioned from accounting to specialized software development. Based in Cairo, I build high-performance applications using <strong>Swift</strong> and <strong>SwiftUI</strong>.</p>
-                <p>I am deeply interested in <strong>Clean Architecture (MVVM, VIPER, TCA)</strong> and modularization. I focus on creating scalable systems and leveraging AI-augmented development to enhance engineering efficiency.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="section">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-right">Technical Arsenal</h2>
-            <div class="skills-grid">
-                <div class="skill-pill" data-aos="fade-up">Swift / SwiftUI</div>
-                <div class="skill-pill" data-aos="fade-up">Clean Architecture</div>
-                <div class="skill-pill" data-aos="fade-up">Modularization (SPM)</div>
-                <div class="skill-pill" data-aos="fade-up">SwiftData / CoreData</div>
-                <div class="skill-pill" data-aos="fade-up">MVVM / VIPER / TCA</div>
-                <div class="skill-pill" data-aos="fade-up">Async/Await</div>
-                <div class="skill-pill" data-aos="fade-up">REST APIs / WebSockets</div>
-                <div class="skill-pill" data-aos="fade-up">Unit & UI Testing</div>
+            <h2 class="section-title">About Me</h2>
+            <div class="glass-card" data-aos="fade-up">
+                <p>Senior iOS Developer specializing in **Swift, SwiftUI, and Modular Architecture**[cite: 5]. I have a proven track record in modernizing legacy codebases into optimized **MVVM-C and VIPER** patterns[cite: 7].</p>
+                <p>Expert in building scalable ecosystems for **FinTech, Logistics, and E-commerce**[cite: 6].</p>
             </div>
         </div>
     </section>
 
     <section id="projects" class="section">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-right">Featured Projects</h2>
+            <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid">
-                <div class="glass-card project-card" data-aos="fade-up">
-                    <h3>Binbon Social App</h3>
-                    <p>Modular social media platform featuring real-time video streaming, stories, and live chat integration.</p>
-                    <div class="tags"><span>SwiftUI</span><span>WebSockets</span></div>
+                <div class="glass-card project-card" onclick="openProject('ezeats')" data-aos="fade-up">
+                    <div class="project-preview-scroll">
+                        <img src="ezeats1.jpg" alt="EZeats 1">
+                        <img src="ezeats2.jpg" alt="EZeats 2">
+                    </div>
+                    <h3>EZeats</h3>
+                    <p>Multi-vendor food-tech ecosystem serving 45,000+ users[cite: 53].</p>
+                    <div class="tags"><span>SwiftUI</span><span>SwiftData</span></div>
                 </div>
-                <div class="glass-card project-card" data-aos="fade-up" data-aos-delay="100">
-                    <h3>Marketplace Platform</h3>
-                    <p>Multi-vendor e-commerce application similar to Talabat, built for high scalability and localized performance.</p>
-                    <div class="tags"><span>UIKit</span><span>Combine</span></div>
-                </div>
-                <div class="glass-card project-card" data-aos="fade-up" data-aos-delay="200">
-                    <h3>Modular Networking Layer</h3>
-                    <p>Standalone, protocol-oriented networking package using Async/Await for modern iOS development.</p>
-                    <div class="tags"><span>Swift</span><span>SPM</span></div>
+
+                <div class="glass-card project-card" onclick="openProject('drovox')" data-aos="fade-up">
+                    <div class="project-preview-scroll">
+                        <img src="drovox1.jpg" alt="Drovox 1">
+                        <img src="drovox2.jpg" alt="Drovox 2">
+                    </div>
+                    <h3>Drovox & Drovox Hero</h3>
+                    <p>Premium ride-hailing ecosystem with real-time GPS tracking[cite: 61].</p>
+                    <div class="tags"><span>UIKit</span><span>GPS Tracking</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-right">Get In Touch</h2>
-            <div class="glass-card contact-container" data-aos="zoom-in">
-                <p>Let's discuss your next project or technical challenge.</p>
-                <div class="contact-links">
-                    <a href="mailto:dev.mohamed.shendy@gmail.com" class="contact-btn"><i class="fas fa-envelope"></i></a>
-                    <a href="https://github.com/MohamedShendy1" target="_blank" class="contact-btn"><i class="fab fa-github"></i></a>
-                    <a href="http://linkedin.com/in/mohamed-shendy-30563a173" target="_blank" class="contact-btn"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
+    <div id="project-modal" class="modal">
+        <div class="modal-content glass-card">
+            <span class="close" onclick="closeProject()">&times;</span>
+            <div id="modal-body"></div>
         </div>
-    </section>
+    </div>
 
     <footer class="footer">
-        <p>&copy; 2026 Mohamed Shendy. Built with Swift precision.</p>
+        <p>&copy; 2026 Mohamed Shendy[cite: 1].</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
