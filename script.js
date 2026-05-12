@@ -1,83 +1,84 @@
-// AOS Animation Init
-AOS.init({ duration: 1000, once: true });
+// ==========================================
+// Portfolio Loaded
+// ==========================================
 
-// Typewriter Setup
-const textElement = document.getElementById('typewriter');
-const phrases = [
-    'Senior iOS Developer',
-    'SwiftUI & Architecture Specialist',
-    'Modular Design Expert'
-];
-
-let pIndex = 0, cIndex = 0, isDeleting = false;
-
-function typeEffect() {
-    const current = phrases[pIndex];
-    textElement.textContent = isDeleting ? current.substring(0, cIndex--) : current.substring(0, cIndex++);
-    
-    let speed = isDeleting ? 50 : 100;
-    
-    if (!isDeleting && cIndex === current.length) { 
-        speed = 2000; 
-        isDeleting = true; 
-    } else if (isDeleting && cIndex === 0) { 
-        isDeleting = false; 
-        pIndex = (pIndex + 1) % phrases.length; 
-        speed = 500; 
-    }
-    setTimeout(typeEffect, speed);
-}
-
-// Project Detail Data
-const projectData = {
-    ezeats: {
-        title: "EZeats",
-        description: "A comprehensive multi-vendor food-tech platform serving over 45,000 users. Features include QR-code ordering and real-time delivery tracking.",
-        images: ["ezeats1.jpg", "ezeats2.jpg", "ezeats3.jpg"],
-        skills: ["SwiftUI", "SwiftData", "MVVM-C"]
-    },
-    drovox: {
-        title: "Drovox Hero",
-        description: "Premium ride-hailing ecosystem featuring real-time GPS tracking, multi-vehicle management, and fuel credit systems.",
-        images: ["drovox1.jpg", "drovox2.jpg"],
-        skills: ["UIKit", "CoreLocation", "Google Maps"]
-    }
-};
-
-function openProject(id) {
-    const p = projectData[id];
-    const modal = document.getElementById('project-modal');
-    const body = document.getElementById('modal-body');
-    
-    body.innerHTML = `
-        <h2>${p.title}</h2>
-        <div class="project-preview-scroll" style="height: 400px; margin: 20px 0;">
-            ${p.images.map(img => `<img src="${img}" style="height: 100%; width: auto; min-width: 100%;">`).join('')}
-        </div>
-        <p style="font-size: 1.1rem; line-height: 1.6;">${p.description}</p>
-        <div class="tags" style="margin-top: 20px;">
-            ${p.skills.map(s => `<span>${s}</span>`).join('')}
-        </div>
-    `;
-    modal.style.display = "block";
-    document.body.style.overflow = "hidden";
-}
-
-function closeProject() {
-    document.getElementById('project-modal').style.display = "none";
-    document.body.style.overflow = "auto";
-}
-
-// Theme Toggle
-const themeBtn = document.getElementById('theme-btn');
-themeBtn.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
-    const icon = themeBtn.querySelector('i');
-    icon.classList.toggle('fa-moon');
-    icon.classList.toggle('fa-sun');
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("Mohamed Shendy Portfolio Loaded");
 });
 
-document.addEventListener('DOMContentLoaded', typeEffect);
+// ==========================================
+// Smooth Scroll Active Links
+// ==========================================
 
-// Close modal on background click
-window.onclick = (e) => { if (e.target == document.getElementById('project-modal')) closeProject(); }
+const navLinks = document.querySelectorAll('.nav-links a');
+
+navLinks.forEach(link => {
+
+  link.addEventListener('click', function(e) {
+
+    e.preventDefault();
+
+    const targetId = this.getAttribute('href');
+    const targetSection = document.querySelector(targetId);
+
+    if(targetSection) {
+
+      window.scrollTo({
+        top: targetSection.offsetTop - 70,
+        behavior: 'smooth'
+      });
+
+    }
+
+  });
+
+});
+
+// ==========================================
+// Navbar Background On Scroll
+// ==========================================
+
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+
+  if(window.scrollY > 50) {
+
+    navbar.style.background = "rgba(0,0,0,0.85)";
+    navbar.style.backdropFilter = "blur(20px)";
+    navbar.style.borderBottom = "1px solid rgba(255,255,255,0.08)";
+
+  } else {
+
+    navbar.style.background = "rgba(0,0,0,0.6)";
+    navbar.style.borderBottom = "1px solid rgba(255,255,255,0.06)";
+  }
+
+});
+
+// ==========================================
+// Fade In Animation On Scroll
+// ==========================================
+
+const observer = new IntersectionObserver((entries) => {
+
+  entries.forEach(entry => {
+
+    if(entry.isIntersecting) {
+
+      entry.target.classList.add('show');
+
+    }
+
+  });
+
+}, {
+  threshold: 0.2
+});
+
+const hiddenElements = document.querySelectorAll('.project-card, .about-right, .about-left');
+
+hiddenElements.forEach(el => {
+  el.classList.add('hidden');
+  observer.observe(el);
+});
