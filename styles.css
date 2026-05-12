@@ -10,10 +10,9 @@ html {
 
 body {
   font-family: "Inter", sans-serif;
-  /* background: #000; */
+  background: #000;
   color: #fff;
   overflow-x: hidden;
-   background:red !important;
 }
 
 
