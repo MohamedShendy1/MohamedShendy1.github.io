@@ -1,40 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
     const revealElements = document.querySelectorAll('.reveal');
-    const navbar = document.querySelector('.navbar');
-    const logo = document.querySelector('.logo');
-    const navLinks = document.querySelectorAll('.nav-links a');
 
-    // Reveal on scroll logic
     const revealOnScroll = () => {
-        revealElements.forEach(el => {
+        for (let i = 0; i < revealElements.length; i++) {
             const windowHeight = window.innerHeight;
-            const elementTop = el.getBoundingClientRect().top;
-            if (elementTop < windowHeight - 100) {
-                el.classList.add("active");
-            }
-        });
-    };
+            const elementTop = revealElements[i].getBoundingClientRect().top;
+            const elementVisible = 100;
 
-    // Navbar theme switch
-    const handleNavbar = () => {
-        if (window.scrollY > window.innerHeight - 80) {
-            navbar.style.background = "rgba(0,0,0,0.8)";
-            navbar.style.backdropFilter = "blur(15px)";
-            logo.style.color = "#fff";
-            navLinks.forEach(link => link.style.color = "#fff");
-        } else {
-            navbar.style.background = "transparent";
-            navbar.style.backdropFilter = "none";
-            logo.style.color = "#000";
-            navLinks.forEach(link => link.style.color = "#333");
+            if (elementTop < windowHeight - elementVisible) {
+                revealElements[i].classList.add("active");
+            }
         }
     };
 
-    window.addEventListener("scroll", () => {
-        revealOnScroll();
-        handleNavbar();
-    });
-
+    window.addEventListener("scroll", revealOnScroll);
+    
+    // Check once on load
     revealOnScroll();
-    handleNavbar();
+
+    // Small Navbar Scroll Effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            navbar.style.background = "rgba(255,255,255,0.9)";
+            navbar.style.backdropFilter = "blur(10px)";
+        } else {
+            navbar.style.background = "transparent";
+            navbar.style.backdropFilter = "none";
+        }
+    });
 });
