@@ -3,13 +3,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>Mohamed Shendy · Senior iOS Developer</title>
+    <title>Mohamed Shendy | Senior iOS Developer</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
-    <style>
-        /* additional critical overrides + apple-style animation are inside styles.css */
-    </style>
 </head>
 <body>
 
@@ -17,13 +14,13 @@
         <div class="nav-container">
             <a href="#" class="logo">MS</a>
             <ul class="nav-links">
-                <li><a href="#bio-reveal">About</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- HERO: centered profile, name, title (Senior iOS Developer at EZeats) -->
+    <!-- HERO: centered profile, name, and "Senior iOS Developer at EZeats" -->
     <section id="hero" class="hero-centered">
         <div class="hero-content">
             <div class="profile-wrapper">
@@ -31,7 +28,6 @@
             </div>
             <h1 class="name-gradient">Mohamed Shendy</h1>
             <p class="hero-subtitle">Senior iOS Developer at EZeats</p>
-            
             <div class="scroll-indicator">
                 <p>scroll</p>
                 <i class="fa-solid fa-chevron-down"></i>
@@ -39,11 +35,12 @@
         </div>
     </section>
 
-    <!-- APPLE-STYLE SCROLL REVEAL SECTION : detailed description with cinematic blur/scale effect -->
-    <section id="bio-reveal" class="description-apple-section">
-        <div class="apple-text-container">
-            <div class="apple-text-card">
-                <p class="apple-description-text" id="dynamicBioText">
+    <!-- ABOUT ME SECTION (title + description) with Apple-style scroll reveal -->
+    <section id="about" class="about-section">
+        <div class="container about-container">
+            <h2 class="about-title reveal">About Me</h2>
+            <div class="about-text-wrapper reveal">
+                <p class="about-description">
                     Senior iOS Developer with 5+ years of experience specializing in Swift, SwiftUI, and Modular Architecture.
                     Expert in building scalable ecosystems for FinTech, Logistics, and E-commerce using Clean Architecture and SOLID principles.
                     Proven track record in modernizing legacy codebases into optimized MVVM-C and VIPER patterns.
@@ -53,14 +50,14 @@
         </div>
     </section>
 
-    <!-- PROJECTS SECTION (modern grid / card layout, multiple projects) -->
+    <!-- PROJECTS SECTION -->
     <section id="projects" class="projects-section">
         <div class="container">
-            <h2 class="section-title reveal">Featured Work</h2>
+            <h2 class="section-title reveal">Featured Projects</h2>
 
-            <!-- PROJECT 1: EZeats (with interactive image carousel) -->
-            <div class="project-card-v2 reveal">
-                <div class="project-visual" id="ezeats-carousel">
+            <!-- PROJECT 1: EZeats with image carousel -->
+            <div class="project-card-v2 reveal" id="project-ezeats">
+                <div class="project-visual">
                     <button class="nav-arrow left" id="ezeatsPrev"><i class="fa-solid fa-chevron-left"></i></button>
                     <div class="main-device-wrapper">
                         <img src="images/ezeats/1.png" alt="EZeats App" class="device-image" id="ezeatsImage">
@@ -84,7 +81,7 @@
                 </div>
             </div>
 
-            <!-- PROJECT 2: Paymob FinTech (static showcase) -->
+            <!-- PROJECT 2: Paymob FinTech -->
             <div class="project-card-v2 reveal">
                 <div class="project-visual">
                     <div class="main-device-wrapper">
@@ -107,7 +104,7 @@
                 </div>
             </div>
 
-            <!-- PROJECT 3: LogiMove (Logistics & modular architecture) -->
+            <!-- PROJECT 3: LogiMove (Logistics) -->
             <div class="project-card-v2 reveal">
                 <div class="project-visual">
                     <div class="main-device-wrapper">
@@ -137,9 +134,5 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        // Additional dynamic carousel logic + Apple-style scroll observer (all in script.js)
-        // but to ensure fully self-contained and robust, we also define carousel on window load
-    </script>
 </body>
 </html>
