@@ -6,23 +6,29 @@
     <title>Mohamed Shendy | Senior iOS Developer</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
-<body>
-
-    <nav class="navbar">
+<body class="dark-mode">
+    <!-- Navbar with glass effect -->
+    <nav class="navbar glass-nav">
         <div class="nav-container">
             <a href="#" class="logo">MS</a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#" id="contactBtn">Contact Info</a></li>
             </ul>
+            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Dark/Light mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
         </div>
     </nav>
 
-    <!-- HERO: centered profile, name, and "Senior iOS Developer at EZeats" -->
+    <!-- Hero Section (centered profile, name, title) -->
     <section id="hero" class="hero-centered">
-        <div class="hero-content">
+        <div class="hero-content glass-card">
             <div class="profile-wrapper">
                 <img src="profile.jpg" alt="Mohamed Shendy" class="profile-img" />
             </div>
@@ -35,101 +41,236 @@
         </div>
     </section>
 
-    <!-- ABOUT ME SECTION (title + description) with Apple-style scroll reveal -->
-    <section id="about" class="about-section">
+    <!-- About Me Section (appears on scroll) -->
+    <section id="about" class="about-section glass-section reveal">
         <div class="container about-container">
-            <h2 class="about-title reveal">About Me</h2>
-            <div class="about-text-wrapper reveal">
-                <p class="about-description">
-                    Senior iOS Developer with 5+ years of experience specializing in Swift, SwiftUI, and Modular Architecture.
-                    Expert in building scalable ecosystems for FinTech, Logistics, and E-commerce using Clean Architecture and SOLID principles.
-                    Proven track record in modernizing legacy codebases into optimized MVVM-C and VIPER patterns.
-                    Passionate about scalable mobile systems, performance optimization, modular architecture, and polished Apple-like user experiences.
-                </p>
-            </div>
+            <h2 class="about-title">About Me</h2>
+            <p class="about-text-glass">
+                Senior iOS Developer with 5+ years of experience specializing in Swift, SwiftUI, and Modular Architecture.
+                Expert in building scalable ecosystems for FinTech, Logistics, and E-commerce using Clean Architecture and SOLID principles.
+                Proven track record in modernizing legacy codebases into optimized MVVM-C and VIPER patterns.
+                Passionate about scalable mobile systems, performance optimization, modular architecture, and polished Apple-like user experiences.
+            </p>
         </div>
     </section>
 
-    <!-- PROJECTS SECTION -->
+    <!-- Projects Section (initially shows only first project) -->
     <section id="projects" class="projects-section">
         <div class="container">
-            <h2 class="section-title reveal">Featured Projects</h2>
-
-            <!-- PROJECT 1: EZeats with image carousel -->
-            <div class="project-card-v2 reveal" id="project-ezeats">
-                <div class="project-visual">
-                    <button class="nav-arrow left" id="ezeatsPrev"><i class="fa-solid fa-chevron-left"></i></button>
-                    <div class="main-device-wrapper">
-                        <img src="images/ezeats/1.png" alt="EZeats App" class="device-image" id="ezeatsImage">
+            <h2 class="section-title reveal">Featured Work</h2>
+            
+            <!-- Visible projects container -->
+            <div id="projects-container">
+                <!-- Project 1: EZeats (always visible) -->
+                <div class="project-card-v2 glass-card reveal" id="project-ezeats">
+                    <div class="project-visual">
+                        <button class="nav-arrow left" id="ezeatsPrev"><i class="fa-solid fa-chevron-left"></i></button>
+                        <div class="main-device-wrapper glass-device">
+                            <img src="https://placehold.co/280x560/1a1c2c/FFFFFF?text=EZeats+App" alt="EZeats" class="device-image" id="ezeatsImage">
+                        </div>
+                        <button class="nav-arrow right" id="ezeatsNext"><i class="fa-solid fa-chevron-right"></i></button>
                     </div>
-                    <button class="nav-arrow right" id="ezeatsNext"><i class="fa-solid fa-chevron-right"></i></button>
-                </div>
-                <div class="project-info-v2">
-                    <h3>EZeats</h3>
-                    <p>
-                        Multi-vendor food-tech ecosystem serving 45,000+ users 
-                        with QR ordering, dual payment integrations, 
-                        and real-time delivery tracking. Scalable modular iOS app built with SwiftUI + Combine.
-                    </p>
-                    <div class="project-tags">
-                        <span>SwiftUI</span><span>MVVM-C</span><span>SwiftData</span><span>Modular Arch</span>
-                    </div>
-                    <div class="project-buttons">
-                        <a href="https://github.com/mohamedshendy" target="_blank" class="btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
-                        <a href="#" class="btn secondary-btn">Case Study</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROJECT 2: Paymob FinTech -->
-            <div class="project-card-v2 reveal">
-                <div class="project-visual">
-                    <div class="main-device-wrapper">
-                        <img src="https://placehold.co/280x560/1a1c23/FFFFFF?text=Paymob+Wallet" alt="Paymob App" class="device-image">
-                    </div>
-                </div>
-                <div class="project-info-v2">
-                    <h3>Paymob FinTech SDK</h3>
-                    <p>
-                        White-label payment orchestration platform handling $200M+ monthly transactions. 
-                        Implemented secure biometric auth, real-time analytics, and modular network layer with Moya.
-                    </p>
-                    <div class="project-tags">
-                        <span>UIKit</span><span>VIPER</span><span>RxSwift</span><span>CoreData</span>
-                    </div>
-                    <div class="project-buttons">
-                        <a href="https://github.com/mohamedshendy" target="_blank" class="btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
-                        <a href="#" class="btn secondary-btn">More Info</a>
+                    <div class="project-info-v2">
+                        <h3>EZeats</h3>
+                        <p>Multi-vendor food-tech ecosystem serving 45,000+ users with QR ordering, dual payment integrations (Paymob, Kashier), real-time delivery tracking, and loyalty rewards. Built with SwiftUI, MVVM-C, and SwiftData.</p>
+                        <div class="project-tags">
+                            <span>SwiftUI</span><span>MVVM-C</span><span>SwiftData</span><span>Combine</span>
+                        </div>
+                        <div class="project-buttons">
+                            <a href="https://github.com/mohamedshendy" target="_blank" class="btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+                            <a href="#" class="btn secondary-btn">Case Study</a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- PROJECT 3: LogiMove (Logistics) -->
-            <div class="project-card-v2 reveal">
-                <div class="project-visual">
-                    <div class="main-device-wrapper">
-                        <img src="https://placehold.co/280x560/1e2a2f/FFFFFF?text=LogiMove+Fleet" alt="LogiMove App" class="device-image">
+            <!-- Hidden projects (will be shown when clicking "Show More") -->
+            <div id="more-projects" style="display: none;">
+                <!-- Project 2: Hashtag KSA -->
+                <div class="project-card-v2 glass-card reveal">
+                    <div class="project-visual">
+                        <div class="main-device-wrapper glass-device">
+                            <img src="https://placehold.co/280x560/2a2e3f/FFFFFF?text=Hashtag+KSA" alt="Hashtag KSA" class="device-image">
+                        </div>
+                    </div>
+                    <div class="project-info-v2">
+                        <h3>Hashtag KSA</h3>
+                        <p>Real-time news aggregator synchronizing data from Twitter, YouTube, and Google APIs with interactive polling and multimedia feeds. UIKit, MVVM, Firebase Realtime DB, Google Maps SDK.</p>
+                        <div class="project-tags"><span>UIKit</span><span>MVVM</span><span>Firebase</span><span>REST</span></div>
+                        <div class="project-buttons"><a href="#" class="btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a></div>
                     </div>
                 </div>
-                <div class="project-info-v2">
-                    <h3>LogiMove</h3>
-                    <p>
-                        Logistics fleet management system with live driver tracking, offline-first sync, and dynamic route optimization. 
-                        Architected using Clean Swift + modular data layer.
-                    </p>
-                    <div class="project-tags">
-                        <span>SwiftUI</span><span>Clean Arch</span><span>MapKit</span><span>WebSocket</span>
+                <!-- Project 3: UAd -->
+                <div class="project-card-v2 glass-card reveal">
+                    <div class="project-visual">
+                        <div class="main-device-wrapper glass-device">
+                            <img src="https://placehold.co/280x560/3e2a3f/FFFFFF?text=UAd" alt="UAd" class="device-image">
+                        </div>
                     </div>
-                    <div class="project-buttons">
-                        <a href="https://github.com/mohamedshendy" target="_blank" class="btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a>
-                        <a href="#" class="btn secondary-btn">Overview</a>
+                    <div class="project-info-v2">
+                        <h3>UAd (Advertiser & Uders)</h3>
+                        <p>Dual B2B/B2C marketing platform for campaign management and influencer monetization. Features commercial verification, OAuth social media integration, and performance-based earnings.</p>
+                        <div class="project-tags"><span>SwiftUI</span><span>OAuth</span><span>Firebase</span></div>
+                        <div class="project-buttons"><a href="#" class="btn primary-btn">Details</a></div>
                     </div>
+                </div>
+                <!-- Project 4: Fawterny -->
+                <div class="project-card-v2 glass-card reveal">
+                    <div class="project-visual">
+                        <div class="main-device-wrapper glass-device">
+                            <img src="https://placehold.co/280x560/2f4a4a/FFFFFF?text=Fawterny" alt="Fawterny" class="device-image">
+                        </div>
+                    </div>
+                    <div class="project-info-v2">
+                        <h3>Fawterny</h3>
+                        <p>Multi-vendor e-commerce marketplace with advanced search, price comparison, real-time inventory tracking. UIKit, VIPER, Firebase, Google Maps SDK.</p>
+                        <div class="project-tags"><span>UIKit</span><span>VIPER</span><span>Firebase</span></div>
+                        <div class="project-buttons"><a href="#" class="btn primary-btn">Learn More</a></div>
+                    </div>
+                </div>
+                <!-- Project 5: Droxox & Droxox Hero -->
+                <div class="project-card-v2 glass-card reveal">
+                    <div class="project-visual">
+                        <div class="main-device-wrapper glass-device">
+                            <img src="https://placehold.co/280x560/443c2e/FFFFFF?text=Droxox+Ride" alt="Droxox" class="device-image">
+                        </div>
+                    </div>
+                    <div class="project-info-v2">
+                        <h3>Droxox & Droxox Hero</h3>
+                        <p>Premium ride-hailing ecosystem with rider and driver apps featuring real-time GPS tracking, multi-vehicle management, instant bank transfers, and fuel credit systems.</p>
+                        <div class="project-tags"><span>SwiftUI</span><span>MapKit</span><span>WebSocket</span></div>
+                        <div class="project-buttons"><a href="#" class="btn primary-btn"><i class="fa-brands fa-github"></i> GitHub</a></div>
+                    </div>
+                </div>
+                <!-- Project 6: Mat7anty -->
+                <div class="project-card-v2 glass-card reveal">
+                    <div class="project-visual">
+                        <div class="main-device-wrapper glass-device">
+                            <img src="https://placehold.co/280x560/2e5a4e/FFFFFF?text=Mat7anty" alt="Mat7anty" class="device-image">
+                        </div>
+                    </div>
+                    <div class="project-info-v2">
+                        <h3>Mat7anty</h3>
+                        <p>Fast-commerce delivery platform for Kuwaiti mills with KNET payment integration, geolocation services, and sub-40-minute delivery optimization. UIKit, MVP, Google Maps API.</p>
+                        <div class="project-tags"><span>UIKit</span><span>MVP</span><span>KNET</span><span>CoreLocation</span></div>
+                        <div class="project-buttons"><a href="#" class="btn primary-btn">Case Study</a></div>
+                    </div>
+                </div>
+                <!-- Project 7: The Content -->
+                <div class="project-card-v2 glass-card reveal">
+                    <div class="project-visual">
+                        <div class="main-device-wrapper glass-device">
+                            <img src="https://placehold.co/280x560/4a2f2f/FFFFFF?text=The+Content" alt="The Content" class="device-image">
+                        </div>
+                    </div>
+                    <div class="project-info-v2">
+                        <h3>The Content</h3>
+                        <p>B2B creative services marketplace connecting government and private sectors. Features project tracking, asset management, and client-provider communication workflows.</p>
+                        <div class="project-tags"><span>SwiftUI</span><span>Clean Arch</span><span>Firebase</span></div>
+                        <div class="project-buttons"><a href="#" class="btn primary-btn">More Info</a></div>
+                    </div>
+                </div>
+                <!-- Project 8: Labany -->
+                <div class="project-card-v2 glass-card reveal">
+                    <div class="project-visual">
+                        <div class="main-device-wrapper glass-device">
+                            <img src="https://placehold.co/280x560/3a5a4a/FFFFFF?text=Labany" alt="Labany" class="device-image">
+                        </div>
+                    </div>
+                    <div class="project-info-v2">
+                        <h3>Labany</h3>
+                        <p>Specialized livestock and meat delivery platform for Saudi Arabia with precise geofencing, custom ordering flows, and secure digital wallet integration.</p>
+                        <div class="project-tags"><span>UIKit</span><span>Geofencing</span><span>Wallet</span></div>
+                        <div class="project-buttons"><a href="#" class="btn primary-btn">GitHub</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="show-more-wrapper">
+                <button id="showMoreProjectsBtn" class="btn show-more-btn glass-card">Show More Projects <i class="fa-solid fa-arrow-down"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section glass-section reveal">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category glass-card">
+                    <h3><i class="fa-solid fa-code"></i> Languages & Frameworks</h3>
+                    <p>Swift, SwiftUI, UIKit, Combine, RxSwift, Async/Await, Objective-C</p>
+                </div>
+                <div class="skill-category glass-card">
+                    <h3><i class="fa-solid fa-layer-group"></i> Architecture & Patterns</h3>
+                    <p>MVVM‑C, VIPER, Clean Architecture, Modular Architecture, Dependency Injection, Coordinator, POP</p>
+                </div>
+                <div class="skill-category glass-card">
+                    <h3><i class="fa-solid fa-database"></i> Data & Networking</h3>
+                    <p>Core Data, SwiftData, Realm, REST, Alamofire, Moya, Codable</p>
+                </div>
+                <div class="skill-category glass-card">
+                    <h3><i class="fa-solid fa-credit-card"></i> Payments & FinTech</h3>
+                    <p>Stripe, PayPal, Apple Pay, Paymob, Kashier, Hyperpay, KNET, Geidea, Mada, PCI‑DSS</p>
+                </div>
+                <div class="skill-category glass-card">
+                    <h3><i class="fa-solid fa-shield-haltered"></i> Security</h3>
+                    <p>SSL Pinning, TLS 1.3, AES, OAuth 2.0, Keychain, Biometrics (Face ID/Touch ID)</p>
+                </div>
+                <div class="skill-category glass-card">
+                    <h3><i class="fa-solid fa-location-dot"></i> Location & Realtime</h3>
+                    <p>MapKit, Google Maps SDK, CoreLocation, Geofencing, Real‑Time Tracking</p>
+                </div>
+                <div class="skill-category glass-card">
+                    <h3><i class="fa-solid fa-fire"></i> Backend & Realtime</h3>
+                    <p>Firebase (Analytics, Crashlytics, Cloud Messaging, Realtime DB), API Integration</p>
+                </div>
+                <div class="skill-category glass-card">
+                    <h3><i class="fa-solid fa-vial"></i> Testing & DevOps</h3>
+                    <p>XCTest, TDD, Unit/UI Testing, Fastlane, Xcode Cloud, GitHub Actions, TestFlight</p>
+                </div>
+                <div class="skill-category glass-card">
+                    <h3><i class="fa-solid fa-tools"></i> Tools & Collaboration</h3>
+                    <p>Git, GitHub, GitFlow, Jira, Agile/Scrum, CocoaPods, SPM, SwiftGen, Figma</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="footer">
+    <!-- Education Section -->
+    <section id="education" class="education-section glass-section reveal">
+        <div class="container">
+            <h2 class="section-title">Education & Certifications</h2>
+            <div class="education-card glass-card">
+                <h3><i class="fa-solid fa-graduation-cap"></i> Bachelor of Commerce</h3>
+                <p>Minufiya University, Egypt (Jul 2006 - Jul 2010)</p>
+            </div>
+            <div class="education-card glass-card">
+                <h3><i class="fa-solid fa-certificate"></i> Private Mentorship Sessions in SwiftUI</h3>
+                <p>Feb 2024 - May 2024</p>
+            </div>
+            <div class="education-card glass-card">
+                <h3><i class="fa-solid fa-certificate"></i> Private Course in iOS Development (Swift)</h3>
+                <p>May 2019 - Aug 2019</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Modal (hidden by default) -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content glass-card">
+            <span class="close-modal">&times;</span>
+            <h2>Contact Information</h2>
+            <ul class="contact-list">
+                <li><i class="fa-solid fa-phone"></i> +201202396718</li>
+                <li><i class="fa-solid fa-envelope"></i> dev.mohamed.shendy@gmail.com</li>
+                <li><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com/in/mohamedshendy" target="_blank">linkedin.com/in/mohamedshendy</a></li>
+                <li><i class="fa-brands fa-github"></i> <a href="https://github.com/MohamedShendy1" target="_blank">github.com/MohamedShendy1</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="footer glass-footer">
         <p>© 2025 Mohamed Shendy — Swift · SwiftUI · Modular iOS Architecture</p>
     </footer>
 
