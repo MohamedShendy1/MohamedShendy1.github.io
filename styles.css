@@ -1,4 +1,4 @@
-/* ---------- GLOBAL RESET & VARIABLES ---------- */
+/* ---------- RESET & VARIABLES ---------- */
 * {
     margin: 0;
     padding: 0;
@@ -23,7 +23,7 @@ body.light-mode {
     color: #1d1d1f;
 }
 
-/* Glassmorphism Base */
+/* Glassmorphism Core */
 .glass-card, .glass-nav, .glass-footer, .glass-device, .modal-content {
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(12px);
@@ -112,7 +112,7 @@ body.light-mode .navbar {
     transition: 0.2s;
 }
 
-/* Hero Section */
+/* Hero */
 .hero-centered {
     min-height: 100vh;
     display: flex;
@@ -209,7 +209,7 @@ body.light-mode .name-gradient {
     backdrop-filter: blur(4px);
 }
 
-/* Projects Section */
+/* Projects */
 .projects-section {
     padding: 80px 5% 120px;
 }
